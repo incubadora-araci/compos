@@ -14,7 +14,7 @@ class MapSampleState extends State<MapSample> {
   final Completer<GoogleMapController> _controller =
       Completer<GoogleMapController>();
 
-  static const CameraPosition _kGooglePlex = CameraPosition(
+  static const CameraPosition IACS = CameraPosition(
     target: LatLng(-22.89799942836415, -43.13483046292866),
     zoom: 15.3,
   );
@@ -30,7 +30,14 @@ class MapSampleState extends State<MapSample> {
         myLocationEnabled: true,
         myLocationButtonEnabled: true,
         mapType: MapType.normal,
-        initialCameraPosition: _kGooglePlex,
+        initialCameraPosition: IACS,
+        markers: {
+          const Marker(
+            markerId: MarkerId('sourceLocation'),
+            icon: BitmapDescriptor.defaultMarker,
+            position: LatLng(-22.89799942836415, -43.13483046292866)
+            )
+        },
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },

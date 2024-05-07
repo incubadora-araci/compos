@@ -139,12 +139,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Column(
                     children: [
-                      Icon(Icons.calendar_month),
+                      Icon(Icons.home),
                       Text(
-                        'Início das Submissões',
-                        style: TextStyle(fontSize: 10),
+                        'Home Page',
+                        style: TextStyle(fontSize: 15),
                       ),
-                      Text('15/12/2023'),
                     ],
                   ),
                 ],
@@ -162,12 +161,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Column(
                     children: [
-                      Icon(Icons.calendar_month),
+                      Icon(Icons.location_on),
                       Text(
-                        'Fim das Submissões',
-                        style: TextStyle(fontSize: 10),
+                        'Mapa',
+                        style: TextStyle(fontSize: 15),
                       ),
-                      Text('18/03/2024'),
                     ],
                   ),
                 ],
@@ -191,10 +189,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Icon(Icons.calendar_month),
                           Text(
-                            'Divulgação dos Trabalhos',
-                            style: TextStyle(fontSize: 10),
+                            'Programação',
+                            style: TextStyle(fontSize: 15),
                           ),
-                          Text('02/05/2024'),
                         ],
                       ),
                     ],
@@ -212,12 +209,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Column(
                     children: [
-                      Icon(Icons.calendar_month),
-                      Text(
-                        'Divulgação dos Trabalhos',
-                        style: TextStyle(fontSize: 10),
+                      Icon(Icons.link_outlined,
+                        size: 30,
                       ),
-                      Text('02/05/2024'),
+                      Text(
+                        ' Selecionados',
+                        style: TextStyle(fontSize: 15),
+                      ),
                     ],
                   ),
                 ],

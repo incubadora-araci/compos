@@ -22,6 +22,5 @@ class Liked extends StatelessWidget {
         ),
         body: Center()
       );
-    //aaaa
   }
 }
