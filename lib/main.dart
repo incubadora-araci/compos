@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'map.dart';
-import 'schedule.dart';
-import 'liked.dart';
+import 'planta.dart';
+import 'cronograma.dart';
 import 'package:flutter_config/flutter_config.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'constants.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Required by FlutterConfig
@@ -46,9 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 253, 165, 165),
+          backgroundColor: colorWhite,
           title: Text(
-            'Home',
+            '',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(fontSize: 16),
             ),
@@ -69,10 +70,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text(
                 'O 33º Encontro Anual da Compós acontece entre 23 e 26 de julho de 2024 no IACS (Instituto de Arte e Comunicação Social) da UFF, em Niterói, Rio de Janeiro. Trata-se de um dos mais tradicionais eventos da área da Comunicação, trazendo pesquisadores do país inteiro reunidos em 24 Grupos Temáticos que, durante dois dias, debatem os trabalhos apresentados. O objetivo é ser um espaço de troca aprofundado, contribuindo para a circulação e intercâmbio do conhecimento, além de induzir e fomentar a criação de importantes redes de pesquisa.',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20,
+                color: colorBlack
+                ),
               
               ),
-              color: Color.fromARGB(255, 253, 165, 165),
+              color: colorWhite,
             ),
             Stack(
               children: [
@@ -83,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: EdgeInsets.all(20),
                 ),
                 Container(
-                  color: Colors.amber[50],
+                  color: colorLightYellow,
                   child: Text('MAC - Niterói',
                     style: TextStyle(
                       fontSize: 20,
@@ -104,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: EdgeInsets.all(20),
                 ),
                 Container(
-                  color: Colors.amber[50],
+                  color: colorLightYellow,
                   child: Text('Novo IACS - UFF',
                     style: TextStyle(
                       fontSize: 20,
@@ -238,7 +241,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MapSample()),
+                      MaterialPageRoute(builder: (context) => GoogleMapPage()),
                     );
                   },
                   child: Icon(Icons.location_on)),

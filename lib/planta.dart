@@ -8,9 +8,9 @@ class Schedule extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green[100],
+          backgroundColor: Color.fromARGB(255, 253, 165, 165),
           title: const Text(
-            'COMPÓS 2024',
+            '',
             style: TextStyle(
               fontSize: 16,
             ),
@@ -20,7 +20,10 @@ class Schedule extends StatelessWidget {
           toolbarHeight: 18,
           toolbarOpacity: 0.9,
         ),
-        body: Center()
+        body: Center(
+
+
+        )
       );
     
   }
