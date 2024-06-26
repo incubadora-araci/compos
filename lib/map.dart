@@ -49,12 +49,48 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
                     markerId: const MarkerId('currentLocation'),
                     icon: BitmapDescriptor.defaultMarkerWithHue(
                         BitmapDescriptor.hueBlue),
+                    infoWindow: InfoWindow(
+                      title: 'Você',
+                      snippet: 'Sua Localização Atual',
+                    ),
                     position: currentPosition!,
                   ),
                   const Marker(
                     markerId: MarkerId('sourceLocation'),
+                    infoWindow: InfoWindow(
+                      title: 'Marker Title',
+                      snippet: 'This is the snippet text',
+                    ),
                     icon: BitmapDescriptor.defaultMarker,
                     position: beiraMar,
+                  ),
+                  const Marker(
+                    markerId: MarkerId('IACS'),
+                    infoWindow: InfoWindow(
+                      title: 'IACS',
+                      snippet: 'Local do Evento',
+                    ),
+                    icon: BitmapDescriptor.defaultMarker,
+                    position: IACS,
+                  ),
+                  const Marker(
+                    markerId: MarkerId(''),
+                    infoWindow: InfoWindow(
+                      title: 'Marker Title',
+                      snippet: 'This is the snippet text',
+                    ),
+                    icon: BitmapDescriptor.defaultMarker,
+                    position: ,
+                  ),
+
+                  const Marker(
+                    markerId: MarkerId(''),
+                    infoWindow: InfoWindow(
+                      title: 'Marker Title',
+                      snippet: 'This is the snippet text',
+                    ),
+                    icon: BitmapDescriptor.defaultMarker,
+                    position: ,
                   ),
                   const Marker(
                     markerId: MarkerId('destinationLocation'),
