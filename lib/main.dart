@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(fontSize: 20,
                 color: colorBlack
                 ),
-              
+
               ),
               color: colorWhite,
             ),
@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: EdgeInsets.all(20),
                 ),
                 Container(
-                  color: colorLightYellow,
+                  color: Colors.amber[50],
                   child: Text('MAC - Niterói',
                     style: TextStyle(
                       fontSize: 20,
@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: EdgeInsets.all(20),
                 ),
                 Container(
-                  color: colorLightYellow,
+                  color: Colors.amber[50],
                   child: Text('Novo IACS - UFF',
                     style: TextStyle(
                       fontSize: 20,
@@ -119,111 +119,38 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
               ],
             ),
-            Container(
-              child: Text(
-                'Páginas',
-                style: TextStyle(decorationThickness: 20, fontSize: 20),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
+            Stack(
               children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(1),
-                    decoration: BoxDecoration(
-                      color:Color.fromARGB(255, 253, 165, 165),
-                      borderRadius: BorderRadius.circular(20.0),
+                Container(
+                  child: Image.asset('lib/assets/mapaIACS.png'),
+                  width: 500,
+                  height: 300,
+                  padding: EdgeInsets.all(20),
+                ),
+                Container(
+                  color: Colors.amber[50],
+                  child: Text('Mapa Novo IACS',
+                    style: TextStyle(
+                      fontSize: 20,
                     ),
-                    height: 110,
-                    width: 110,
-                  ),
-                  Column(
-                    children: [
-                      Icon(Icons.home),
-                      Text(
-                        'Home Page',
-                        style: TextStyle(fontSize: 15),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color:Color.fromARGB(255, 253, 165, 165),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    height: 110,
-                    width: 110,
-                  ),
-                  Column(
-                    children: [
-                      Icon(Icons.location_on),
-                      Text(
-                        'Mapa',
-                        style: TextStyle(fontSize: 15),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
+                    textAlign: TextAlign.center,
+                  ) ,
+                  width: 200,
+                  height: 30,
+                )
+              ],
             ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 253, 165, 165),
-                          borderRadius: BorderRadius.circular(20.0),
-                        ),
-                        height: 110,
-                        width: 110,
-                      ),
-                      Column(
-                        children: [
-                          Icon(Icons.calendar_month),
-                          Text(
-                            'Programação',
-                            style: TextStyle(fontSize: 15),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 253, 165, 165),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    height: 110,
-                    width: 110,
-                  ),
-                  Column(
-                    children: [
-                      Icon(Icons.link_outlined,
-                        size: 30,
-                      ),
-                      Text(
-                        ' Selecionados',
-                        style: TextStyle(fontSize: 15),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ]),
+            Container(
+              color: Colors.amber[50],
+              child: Text('Páginas',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+                textAlign: TextAlign.center,
+              ) ,
+              width: 200,
+              height: 30,
+            )
           ]),
         ),
         bottomNavigationBar: BottomAppBar(
@@ -233,9 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
+                  onPressed: () {},
                   child: Icon(Icons.home)),
               ElevatedButton(
                   onPressed: () {
@@ -252,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(builder: (context) => Schedule()),
                     );
                   },
-                  child: Icon(Icons.calendar_month_sharp)),
+                  child: Icon(Icons.link_outlined)),
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -260,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(builder: (context) => Liked()),
                     );
                   },
-                  child: Icon(Icons.link_outlined)),
+                  child: Icon(Icons.calendar_month_sharp)),
             ],
           ),
         ));

@@ -1,5 +1,9 @@
+import 'package:compos_uff_app/planta.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+import 'main.dart';
+import 'map.dart';
 
 class Liked extends StatelessWidget {
   const Liked({super.key});
@@ -7,20 +11,63 @@ class Liked extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.green[100],
-          title: const Text(
-            'COMPÓS 2024',
-            style: TextStyle(
-              fontSize: 16,
+        body: SingleChildScrollView(
+          child: Column(
+          children: [
+            Container(
+              height: 50,
+              width: 50,
             ),
-          ),
-          leadingWidth: 100,
-          centerTitle: true,
-          toolbarHeight: 18,
-          toolbarOpacity: 0.9,
+            Container(
+              child: Image.asset('lib/assets/print1.png'),
+            ),
+            Container(
+              child: Image.asset('lib/assets/print2.png'),
+            )
+          ]
         ),
-        body: Center()
+        ),
+        bottomNavigationBar: BottomAppBar(
+          height: 50,
+          color: Color.fromARGB(255, 253, 165, 165),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyHomePage(title: 'COMPÓS 2024',)),
+                    );
+                  },
+                  child: Icon(Icons.home)),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => GoogleMapPage()),
+                    );
+                  },
+                  child: Icon(Icons.location_on)),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Schedule()),
+                    );
+                  },
+                  child: Icon(Icons.link_outlined)),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Liked()),
+                    );
+                  },
+                  child: Icon(Icons.calendar_month_sharp)),
+            ],
+          ),
+        )
       );
   }
 }
