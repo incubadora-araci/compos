@@ -19,10 +19,10 @@ class Liked extends StatelessWidget {
               width: 50,
             ),
             Container(
-              child: Image.asset('lib/assets/print1.png'),
+              child: Image.asset('lib/assets/mapa1.png'),
             ),
             Container(
-              child: Image.asset('lib/assets/print2.png'),
+              child: Image.asset('lib/assets/mapa2.png'),
             )
           ]
         ),
