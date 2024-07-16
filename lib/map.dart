@@ -55,48 +55,17 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
                     ),
                     position: currentPosition!,
                   ),
-                  const Marker(
-                    markerId: MarkerId('sourceLocation'),
-                    infoWindow: InfoWindow(
-                      title: 'Marker Title',
-                      snippet: 'This is the snippet text',
-                    ),
-                    icon: BitmapDescriptor.defaultMarker,
-                    position: beiraMar,
-                  ),
+
                   const Marker(
                     markerId: MarkerId('IACS'),
                     infoWindow: InfoWindow(
-                      title: 'IACS',
+                      title: 'Novo IACS UFF',
                       snippet: 'Local do Evento',
                     ),
                     icon: BitmapDescriptor.defaultMarker,
                     position: IACS,
                   ),
-                  const Marker(
-                    markerId: MarkerId(''),
-                    infoWindow: InfoWindow(
-                      title: 'Marker Title',
-                      snippet: 'This is the snippet text',
-                    ),
-                    icon: BitmapDescriptor.defaultMarker,
-                    position: ,
-                  ),
 
-                  const Marker(
-                    markerId: MarkerId(''),
-                    infoWindow: InfoWindow(
-                      title: 'Marker Title',
-                      snippet: 'This is the snippet text',
-                    ),
-                    icon: BitmapDescriptor.defaultMarker,
-                    position: ,
-                  ),
-                  const Marker(
-                    markerId: MarkerId('destinationLocation'),
-                    icon: BitmapDescriptor.defaultMarker,
-                    position: IACS,
-                  )
                 },
                 polylines: Set<Polyline>.of(polylines.values),
               ),
