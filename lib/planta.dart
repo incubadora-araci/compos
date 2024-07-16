@@ -23,10 +23,10 @@ class Schedule extends StatelessWidget {
                   width: 50,
                 ),
                 Container(
-                  child: Image.asset('lib/assets/composterreo.png'),
+                  child: Image.asset('lib/assets/mapa1.png'),
                 ),
                 Container(
-                  child: Image.asset('lib/assets/composandar.png'),
+                  child: Image.asset('lib/assets/mapa2.png'),
                 )
               ]
           ),

@@ -1,12 +1,22 @@
 import 'package:compos_uff_app/planta.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 import 'main.dart';
 import 'map.dart';
 
 class Liked extends StatelessWidget {
   const Liked({super.key});
+
+  Future<void> _launchUrl(String stringUrl) async {
+    final Uri url = Uri.parse(stringUrl);
+
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +29,33 @@ class Liked extends StatelessWidget {
               width: 50,
             ),
             Container(
-              child: Image.asset('lib/assets/mapa1.png'),
+              child: Image.asset('lib/assets/printcro01.png'),
             ),
             Container(
-              child: Image.asset('lib/assets/mapa2.png'),
+              child: Image.asset('lib/assets/printcro02.png'),
+            ),
+            Container(
+              child: Image.asset('lib/assets/gt1.png'),
+            ),
+
+            InkWell(
+              child: Image.asset('lib/assets/gt2.png'
+              ),
+              onTap: () {
+                _launchUrl("https://compos2024.softaliza.com.br/programacao-dos-gts-2/");
+              },
+            ),
+
+            InkWell(
+              child: Image.asset('lib/assets/gt3.png'
+              ),
+              onTap: () {
+                _launchUrl("https://compos2024.softaliza.com.br/programacao-dos-gts-2/");
+              },
+            ),
+
+            Container(
+              child: Image.asset('lib/assets/gt4.png'),
             )
           ]
         ),
