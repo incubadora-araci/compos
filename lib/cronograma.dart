@@ -89,7 +89,7 @@ class Liked extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => Schedule()),
                     );
                   },
-                  child: Icon(Icons.link_outlined)),
+                  child: Icon(Icons.account_balance_rounded)),
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(

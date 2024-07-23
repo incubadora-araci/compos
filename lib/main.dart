@@ -7,6 +7,7 @@ import 'cronograma.dart';
 import 'package:flutter_config/flutter_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Required by FlutterConfig
@@ -17,6 +18,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -38,11 +40,20 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  Future<void> _launchUrl(String stringUrl) async {
+    final Uri url = Uri.parse(stringUrl);
+
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text(
                 "Sejam muito bem-vindos à COMPÓS 2024! Este ano o evento será no Instituto de Artes e Comunicação Social (UFF) da UFF, entre os dias 23 e 26 de julho de 2024. Estamos muito contentes de recebê-los no novo prédio do IACS no campus Gragoatá em Niterói. Esperamos que sejam dias intensos de partilha de estudos e pesquisas, além de trocas de experiências valiosas que vão contribuir para a nossa área de conhecimento.Neste aplicativo vocês encontram informações detalhadas sobre o encontro.Vamos juntos fazer deste encontro um marco inesquecível! - A equipe organizadora da COMPÓS 2024. ",
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20,
+                style: TextStyle(fontSize: 16,
                 color: colorBlack
                 ),
 
@@ -140,6 +151,32 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
               ],
             ),
+            InkWell(
+              onTap: () {
+                _launchUrl("https://padlet.com/mariacapper107/mapa-de-restaurantes-em-niter-i-3jf0npsw59082x0o");
+              },
+              child: Stack(
+                children: [
+                  Container(
+                    child: Image.asset('lib/assets/Local.jpg'),
+                    width: 500,
+                    height: 300,
+                    padding: EdgeInsets.all(20),
+                  ),
+                  Container(
+                    color: Colors.amber[50],
+                    child: Text('Mapa Gastronômico',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                      textAlign: TextAlign.center,
+                    ) ,
+                    width: 150,
+                    height: 30,
+                  )
+                ],
+              ),
+            ),
             Container(
               color: Colors.amber[50],
               child: Text('Páginas',
@@ -177,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(builder: (context) => Schedule()),
                     );
                   },
-                  child: Icon(Icons.link_outlined)),
+                  child: Icon(Icons.account_balance_rounded)),
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(
