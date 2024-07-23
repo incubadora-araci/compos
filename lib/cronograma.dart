@@ -29,7 +29,7 @@ class Liked extends StatelessWidget {
               width: 50,
             ),
             Container(
-              child: Image.asset('lib/assets/printcro01.png'),
+              child: Image.asset('lib/assets/plz1.png'),
             ),
             Container(
               child: Image.asset('lib/assets/printcro02.png'),
@@ -39,7 +39,7 @@ class Liked extends StatelessWidget {
             ),
 
             InkWell(
-              child: Image.asset('lib/assets/gt2.png'
+              child: Image.asset('lib/assets/pf1.png'
               ),
               onTap: () {
                 _launchUrl("https://compos2024.softaliza.com.br/programacao-dos-gts-2/");
@@ -47,16 +47,13 @@ class Liked extends StatelessWidget {
             ),
 
             InkWell(
-              child: Image.asset('lib/assets/gt3.png'
+              child: Image.asset('lib/assets/pf2.png'
               ),
               onTap: () {
                 _launchUrl("https://compos2024.softaliza.com.br/programacao-dos-gts-2/");
               },
             ),
 
-            Container(
-              child: Image.asset('lib/assets/gt4.png'),
-            )
           ]
         ),
         ),

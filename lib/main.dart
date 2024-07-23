@@ -167,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.amber[50],
                     child: Text('Mapa Gastronômico',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 14,
                       ),
                       textAlign: TextAlign.center,
                     ) ,
