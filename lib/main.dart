@@ -158,8 +158,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Stack(
                 children: [
                   Container(
-                    child: Image.asset('lib/assets/Local.jpg'),
-                    width: 500,
+                    child: Image.asset('lib/assets/food-service4537.jpg'),
+                    width: 300,
                     height: 300,
                     padding: EdgeInsets.all(20),
                   ),
